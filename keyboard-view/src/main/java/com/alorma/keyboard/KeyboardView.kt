@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.MaterialShapeUtils
+
 
 class KeyboardView @JvmOverloads constructor(
     context: Context,
@@ -37,6 +39,16 @@ class KeyboardView @JvmOverloads constructor(
             MaterialColors.getColor(this, R.attr.colorSurface)
         )
         background = materialDrawable
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        MaterialShapeUtils.setParentAbsoluteElevation(this)
+    }
+
+    override fun setElevation(elevation: Float) {
+        super.setElevation(elevation)
+        MaterialShapeUtils.setElevation(this, elevation)
     }
 
 }
