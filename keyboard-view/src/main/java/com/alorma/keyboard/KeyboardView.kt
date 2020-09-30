@@ -1,12 +1,15 @@
 package com.alorma.keyboard
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.util.AttributeSet
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.color.MaterialColors
+import com.google.android.material.shape.MaterialShapeDrawable
 
 class KeyboardView @JvmOverloads constructor(
     context: Context,
@@ -16,11 +19,24 @@ class KeyboardView @JvmOverloads constructor(
 ) : RecyclerView(context, attributeSet, defStyleAttr) {
 
     init {
+        initBackground(context)
+
         val numbersAdapter = KeyboardNumbersAdapter()
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
         adapter = numbersAdapter
 
-        setBackgroundColor(MaterialColors.getColor(this, R.attr.colorSurface))
+
+    }
+
+    private fun initBackground(context: Context) {
+        val materialDrawable = MaterialShapeDrawable()
+
+        materialDrawable.initializeElevationOverlay(context)
+        materialDrawable.elevation = ViewCompat.getElevation(this)
+        materialDrawable.fillColor = ColorStateList.valueOf(
+            MaterialColors.getColor(this, R.attr.colorSurface)
+        )
+        background = materialDrawable
     }
 
 }
