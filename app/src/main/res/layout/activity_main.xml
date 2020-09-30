@@ -16,8 +16,8 @@
 
     <com.alorma.keyboard.KeyboardView
         android:id="@+id/keyoard1Elevation4"
-        android:layout_width="300dp"
-        android:layout_height="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="4dp" />
 
     <Space
@@ -26,8 +26,8 @@
 
     <com.alorma.keyboard.KeyboardView
         android:id="@+id/keyoard1Elevation16"
-        android:layout_width="300dp"
-        android:layout_height="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="8dp" />
 
     <Space
@@ -43,8 +43,8 @@
     <com.alorma.keyboard.KeyboardView
         android:id="@+id/keyoard2Elevation4"
         style="@style/Widget.Demo.Keyboard.Secondary"
-        android:layout_width="300dp"
-        android:layout_height="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="4dp" />
 
     <Space
@@ -54,7 +54,7 @@
     <com.alorma.keyboard.KeyboardView
         android:id="@+id/keyoard2Elevation16"
         style="@style/Widget.Demo.Keyboard.Secondary"
-        android:layout_width="300dp"
-        android:layout_height="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="8dp" />
 </LinearLayout>
