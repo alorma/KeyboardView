@@ -3,4 +3,6 @@
 
     <style name="Widget.Demo.Keyboard" parent="Widget.Keyboard" />
 
+    <style name="Widget.Demo.Keyboard.Secondary" parent="Widget.Keyboard" />
+
 </resources>
