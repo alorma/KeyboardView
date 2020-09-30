@@ -1,6 +1,7 @@
 package com.alorma.keyboard
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
@@ -18,6 +19,8 @@ class KeyboardView @JvmOverloads constructor(
         val numbersAdapter = KeyboardNumbersAdapter()
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
         adapter = numbersAdapter
+
+        setBackgroundColor(Color.WHITE)
     }
 
 }
