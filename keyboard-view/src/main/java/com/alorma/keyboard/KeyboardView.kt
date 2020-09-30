@@ -1,12 +1,12 @@
 package com.alorma.keyboard
 
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.color.MaterialColors
 
 class KeyboardView @JvmOverloads constructor(
     context: Context,
@@ -20,7 +20,7 @@ class KeyboardView @JvmOverloads constructor(
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
         adapter = numbersAdapter
 
-        setBackgroundColor(Color.WHITE)
+        setBackgroundColor(MaterialColors.getColor(this, R.attr.colorSurface))
     }
 
 }
