@@ -5,6 +5,7 @@ titleOnly: true
 types:
   - feat
   - feature
+  - Feature
   - fix
   - docs
   - style
