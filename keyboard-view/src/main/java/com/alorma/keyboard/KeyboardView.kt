@@ -23,6 +23,7 @@ class KeyboardView @JvmOverloads constructor(
 ) : RecyclerView(context, attributeSet, defStyleAttr) {
 
     private var overlayColor: Int? = null
+    private var overlayAlpha: Float = 0.08f
 
     init {
         initAttributes(context, attributeSet, defStyleAttr, defStyleRes)
@@ -50,6 +51,7 @@ class KeyboardView @JvmOverloads constructor(
             } catch (t: Throwable) {
                 null
             }
+            overlayAlpha = getFloat(R.styleable.KeyboardView_overlayAlpha, overlayAlpha)
         }
     }
 
@@ -62,7 +64,10 @@ class KeyboardView @JvmOverloads constructor(
                     (background as ColorDrawable).color
                 }
                 finalOverlayColor != null -> {
-                    getMergedColor(overlayColor = finalOverlayColor)
+                    getMergedColor(
+                        overlayColor = finalOverlayColor,
+                        overlayAlpha = overlayAlpha
+                    )
                 }
                 else -> {
                     MaterialColors.getColor(this, R.attr.colorSurface)
