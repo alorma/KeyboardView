@@ -3,6 +3,7 @@
 
     <style name="Widget.Demo.Keyboard.Secondary" parent="Widget.Keyboard">
         <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
+        <item name="rippleColor">?colorSecondary</item>
         <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Overlay.Secondary</item>
     </style>
 

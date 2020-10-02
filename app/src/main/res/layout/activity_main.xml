@@ -57,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:elevationOverlayColor="?colorError"
+        app:rippleColor="?colorError"
         android:elevation="16dp"
         app:materialThemeOverlay="@style/ThemeOverlay.Demo.Overlay.Error" />
 </LinearLayout>

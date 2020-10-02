@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
+import androidx.core.content.withStyledAttributes
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +27,22 @@ class KeyboardView @JvmOverloads constructor(
     defStyleAttr,
 ) {
 
-    private var shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
+    var rippleColor: Int = MaterialColors.getColor(this, R.attr.colorOnSurface)
+        set(value) {
+            field = getMergedColor(
+                overlayColor = value,
+                overlayAlpha = 0.3f
+            )
+            numbersAdapter.rippleColor = field
+            numbersAdapter.notifyDataSetChanged()
+        }
+
+    private val numbersAdapter = KeyboardNumbersAdapter(
+        numbers = (0..9).toList().shuffled(),
+        rippleColor = rippleColor
+    )
+
+    var shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
         context,
         attributeSet,
         defStyleAttr,
@@ -40,9 +56,25 @@ class KeyboardView @JvmOverloads constructor(
     init {
         initBackground()
 
-        val numbersAdapter = KeyboardNumbersAdapter()
+        readRippleColor(attributeSet, defStyleAttr, defStyleRes)
+
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
         adapter = numbersAdapter
+    }
+
+    private fun readRippleColor(
+        attributeSet: AttributeSet?,
+        defStyleAttr: Int,
+        defStyleRes: Int
+    ) {
+        context.withStyledAttributes(
+            attributeSet,
+            R.styleable.KeyboardView,
+            defStyleAttr,
+            defStyleRes
+        ) {
+            rippleColor = getColor(R.styleable.KeyboardView_rippleColor, rippleColor)
+        }
     }
 
     private fun initBackground() {

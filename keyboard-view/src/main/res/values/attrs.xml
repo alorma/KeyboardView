@@ -2,6 +2,7 @@
 <resources>
 
     <declare-styleable name="KeyboardView">
+        <attr name="rippleColor" format="color"/>
         <attr name="shapeAppearance" format="reference" />
         <attr name="shapeAppearanceOverlay" format="reference" />
     </declare-styleable>
