@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Widget.Demo.Keyboard" parent="Widget.Keyboard" />
-
     <style name="Widget.Demo.Keyboard.Secondary" parent="Widget.Keyboard">
-        <item name="overlayColor">?colorSecondary</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Overlay.Secondary</item>
     </style>
 
 </resources>

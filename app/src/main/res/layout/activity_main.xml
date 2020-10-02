@@ -56,7 +56,7 @@
         android:id="@+id/keyoard2Elevation16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:overlayColor="?colorError"
-        app:overlayAlpha="0.40"
-        android:elevation="8dp" />
+        app:elevationOverlayColor="?colorError"
+        android:elevation="16dp"
+        app:materialThemeOverlay="@style/ThemeOverlay.Demo.Overlay.Error" />
 </LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ThemeOverlay.Demo.Overlay.Secondary" parent="ThemeOverlay.MaterialComponents">
+        <item name="elevationOverlayColor">?colorSecondary</item>
+    </style>
+
+    <style name="ThemeOverlay.Demo.Overlay.Error" parent="ThemeOverlay.MaterialComponents">
+        <item name="elevationOverlayColor">?colorError</item>
+    </style>
+</resources>
