@@ -15,21 +15,45 @@ import com.google.android.material.color.MaterialColors
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.MaterialShapeUtils
 import com.google.android.material.shape.ShapeAppearanceModel
+import com.google.android.material.theme.overlay.MaterialThemeOverlay.wrap
 
 class KeyboardView @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null,
     @AttrRes defStyleAttr: Int = R.attr.keyboardViewStyle,
     @StyleRes defStyleRes: Int = R.style.Widget_Keyboard
-) : RecyclerView(context, attributeSet, defStyleAttr) {
+) : RecyclerView(
+    wrap(context, attributeSet, defStyleAttr, defStyleRes),
+    attributeSet,
+    defStyleAttr,
+) {
 
-    private var overlayColor: Int? = null
-    private var overlayAlpha: Float = 0.08f
+    private var shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
+        context,
+        attributeSet,
+        defStyleAttr,
+        defStyleRes
+    ).build()
+        set(value) {
+            field = value
+            initBackground()
+        }
+
+    var overlayColor: Int? = null
+        set(value) {
+            field = value
+            initBackground()
+        }
+    var overlayAlpha: Float = 0.08f
+        set(value) {
+            field = value
+            initBackground()
+        }
 
     init {
 
-        initAttributes(context, attributeSet, defStyleAttr, defStyleRes)
-        initBackground(context, attributeSet, defStyleAttr, defStyleRes)
+        initAttributes(attributeSet, defStyleAttr, defStyleRes)
+        initBackground()
 
         val numbersAdapter = KeyboardNumbersAdapter()
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
@@ -37,7 +61,6 @@ class KeyboardView @JvmOverloads constructor(
     }
 
     private fun initAttributes(
-        context: Context,
         attributeSet: AttributeSet?,
         defStyleAttr: Int,
         defStyleRes: Int
@@ -62,24 +85,10 @@ class KeyboardView @JvmOverloads constructor(
         }
     }
 
-    private fun initBackground(
-        context: Context,
-        attributeSet: AttributeSet?,
-        defStyleAttr: Int,
-        defStyleRes: Int
-    ) {
+    private fun initBackground() {
         if (background == null || background is ColorDrawable) {
-
             val backgroundColor = obtainBackgroundColor()
-
-            val shape = ShapeAppearanceModel.builder(
-                context,
-                attributeSet,
-                defStyleAttr,
-                defStyleRes
-            ).build()
-
-            val materialDrawable = MaterialShapeDrawable(shape)
+            val materialDrawable = MaterialShapeDrawable(shapeAppearance)
 
             materialDrawable.initializeElevationOverlay(context)
             materialDrawable.elevation = ViewCompat.getElevation(this)
@@ -109,5 +118,4 @@ class KeyboardView @JvmOverloads constructor(
         super.setElevation(elevation)
         MaterialShapeUtils.setElevation(this, elevation)
     }
-
 }
