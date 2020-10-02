@@ -2,7 +2,7 @@
 <resources>
 
     <style name="BaseDayNightTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorControlNormal">?colorPrimary</item>
+        <item name="colorControlNormal">?colorOnSurface</item>
 
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Demo.Medium</item>
 

@@ -26,8 +26,6 @@ class KeyboardView @JvmOverloads constructor(
     defStyleAttr,
 ) {
 
-    private var rippleColor: Int = MaterialColors.getColor(this, R.attr.colorControlNormal)
-
     private var shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
         context,
         attributeSet,
@@ -40,8 +38,9 @@ class KeyboardView @JvmOverloads constructor(
 
         val numbersAdapter = KeyboardNumbersAdapter(
             numbers = (0..9).toList().shuffled(),
-            rippleColor = rippleColor
+            rippleColor = MaterialColors.getColor(this, R.attr.colorControlNormal)
         )
+
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
         adapter = numbersAdapter
     }

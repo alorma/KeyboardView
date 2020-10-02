@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ThemeOverlay.Demo.Primary" parent="Theme.MaterialComponents">
+    <style name="ThemeOverlay.Demo.Primary" parent="ThemeOverlay.MaterialComponents">
         <item name="colorSurface">?colorPrimary</item>
-        <item name="colorControlNormal">?colorOnSurface</item>
+        <item name="colorOnSurface">?colorOnPrimary</item>
     </style>
 
-    <style name="ThemeOverlay.Demo.Secondary" parent="Theme.MaterialComponents">
+    <style name="ThemeOverlay.Demo.Secondary" parent="ThemeOverlay.MaterialComponents">
         <item name="colorSurface">?colorSecondary</item>
-        <item name="colorControlNormal">?colorOnSurface</item>
+        <item name="colorOnSurface">?colorOnSecondary</item>
     </style>
 
-    <style name="ThemeOverlay.Demo.Error" parent="Theme.MaterialComponents">
+    <style name="ThemeOverlay.Demo.Error" parent="ThemeOverlay.MaterialComponents">
         <item name="colorSurface">?colorError</item>
-        <item name="colorControlNormal">?colorOnSurface</item>
+        <item name="colorOnSurface">?colorOnError</item>
     </style>
 
 </resources>
