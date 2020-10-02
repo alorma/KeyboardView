@@ -14,7 +14,6 @@ import com.google.android.material.color.MaterialColors
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.MaterialShapeUtils
 
-
 class KeyboardView @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null,
@@ -52,17 +51,19 @@ class KeyboardView @JvmOverloads constructor(
     private fun initBackground(context: Context) {
         if (background == null || background is ColorDrawable) {
 
-            val backgroundColor = if (background != null) {
+            fillColor = if (background != null) {
                 (background as ColorDrawable).color
             } else {
                 fillColor
             }
+            
+            fillColor = getMergedColor(overlayColor = fillColor)
 
             val materialDrawable = MaterialShapeDrawable()
 
             materialDrawable.initializeElevationOverlay(context)
             materialDrawable.elevation = ViewCompat.getElevation(this)
-            materialDrawable.fillColor = ColorStateList.valueOf(backgroundColor)
+            materialDrawable.fillColor = ColorStateList.valueOf(fillColor)
             background = materialDrawable
         }
     }
