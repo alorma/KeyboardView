@@ -4,7 +4,7 @@
     <style name="Widget.Demo.Keyboard" parent="Widget.Keyboard" />
 
     <style name="Widget.Demo.Keyboard.Secondary" parent="Widget.Keyboard">
-        <item name="fillColor">?colorSecondary</item>
+        <item name="overlayColor">?colorSecondary</item>
     </style>
 
 </resources>

@@ -2,7 +2,7 @@
 <resources>
 
     <declare-styleable name="KeyboardView">
-        <attr name="fillColor" format="color" />
+        <attr name="overlayColor" format="color" />
     </declare-styleable>
 
     <attr name="keyboardViewStyle" format="reference" />
