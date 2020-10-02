@@ -6,7 +6,6 @@ import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
-import androidx.core.content.withStyledAttributes
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,17 +26,7 @@ class KeyboardView @JvmOverloads constructor(
     defStyleAttr,
 ) {
 
-    private var rippleColor: Int = MaterialColors.getColor(this, R.attr.colorOnSurface)
-        set(value) {
-            field = value
-            numbersAdapter.rippleColor = value
-            numbersAdapter.notifyDataSetChanged()
-        }
-
-    private val numbersAdapter = KeyboardNumbersAdapter(
-        numbers = (0..9).toList().shuffled(),
-        rippleColor = rippleColor
-    )
+    private var rippleColor: Int = MaterialColors.getColor(this, R.attr.colorControlNormal)
 
     private var shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
         context,
@@ -47,34 +36,14 @@ class KeyboardView @JvmOverloads constructor(
     ).build()
 
     init {
-        readColors(attributeSet, defStyleAttr, defStyleRes)
         initBackground()
 
+        val numbersAdapter = KeyboardNumbersAdapter(
+            numbers = (0..9).toList().shuffled(),
+            rippleColor = rippleColor
+        )
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
         adapter = numbersAdapter
-    }
-
-    private fun readColors(
-        attributeSet: AttributeSet?,
-        defStyleAttr: Int,
-        defStyleRes: Int
-    ) {
-        context.withStyledAttributes(
-            attributeSet,
-            R.styleable.KeyboardView,
-            defStyleAttr,
-            defStyleRes
-        ) {
-
-            rippleColor = getMergedColor(
-                backgroundColor = MaterialColors.getColor(
-                    this@KeyboardView,
-                    R.attr.colorSurface
-                ),
-                overlayColor = MaterialColors.getColor(this@KeyboardView, R.attr.colorSurface),
-                overlayAlpha = 0.6f
-            )
-        }
     }
 
     private fun initBackground() {

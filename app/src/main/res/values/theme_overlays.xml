@@ -3,14 +3,17 @@
 
     <style name="ThemeOverlay.Demo.Primary" parent="Theme.MaterialComponents">
         <item name="colorSurface">?colorPrimary</item>
+        <item name="colorControlNormal">?colorOnSurface</item>
     </style>
 
     <style name="ThemeOverlay.Demo.Secondary" parent="Theme.MaterialComponents">
         <item name="colorSurface">?colorSecondary</item>
+        <item name="colorControlNormal">?colorOnSurface</item>
     </style>
 
     <style name="ThemeOverlay.Demo.Error" parent="Theme.MaterialComponents">
         <item name="colorSurface">?colorError</item>
+        <item name="colorControlNormal">?colorOnSurface</item>
     </style>
 
 </resources>
