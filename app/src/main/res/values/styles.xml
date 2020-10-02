@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Widget.Demo.Keyboard.Primary" parent="Widget.Keyboard">
+        <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Overlay.Primary</item>
+    </style>
+
     <style name="Widget.Demo.Keyboard.Secondary" parent="Widget.Keyboard">
         <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
-        <item name="rippleColor">?colorSecondary</item>
         <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Overlay.Secondary</item>
+    </style>
+
+    <style name="Widget.Demo.Keyboard.Error" parent="Widget.Keyboard">
+        <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Overlay.Error</item>
     </style>
 
 </resources>

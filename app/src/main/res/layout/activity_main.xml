@@ -16,24 +16,13 @@
         android:text="Default style" />
 
     <com.alorma.keyboard.KeyboardView
-        android:id="@+id/keyoard1Elevation4"
+        android:id="@+id/keyboardDefault"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="4dp" />
+        android:layout_height="wrap_content"/>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="8dp" />
-
-    <com.alorma.keyboard.KeyboardView
-        android:id="@+id/keyoard1Elevation16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="8dp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,11 +31,20 @@
         android:text="Custom style" />
 
     <com.alorma.keyboard.KeyboardView
-        android:id="@+id/keyoard2Elevation4"
+        style="@style/Widget.Demo.Keyboard.Primary"
+        android:id="@+id/keyboardPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <com.alorma.keyboard.KeyboardView
+        android:id="@+id/keyboardSecondary"
         style="@style/Widget.Demo.Keyboard.Secondary"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="4dp" />
+        android:layout_height="wrap_content"/>
 
     <Space
         android:layout_width="match_parent"
@@ -54,10 +52,7 @@
 
     <com.alorma.keyboard.KeyboardView
         android:id="@+id/keyoard2Elevation16"
+        style="@style/Widget.Demo.Keyboard.Error"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:elevationOverlayColor="?colorError"
-        app:rippleColor="?colorError"
-        android:elevation="16dp"
-        app:materialThemeOverlay="@style/ThemeOverlay.Demo.Overlay.Error" />
+        android:layout_height="wrap_content"/>
 </LinearLayout>

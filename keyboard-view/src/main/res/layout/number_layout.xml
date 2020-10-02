@@ -7,4 +7,5 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:textAppearance="?textAppearanceBody2"
+    android:textColor="?colorOnSurface"
     tools:text="3" />

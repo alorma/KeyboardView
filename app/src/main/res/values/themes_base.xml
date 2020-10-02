@@ -2,7 +2,7 @@
 <resources>
 
     <style name="BaseDayNightTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimarySurface</item>
 
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Demo.Medium</item>
     </style>

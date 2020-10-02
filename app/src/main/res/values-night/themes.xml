@@ -3,10 +3,17 @@
 
     <style name="Theme.Demo" parent="BaseDayNightTheme">
         <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/purple_100</item>
+        <item name="colorPrimarySurface">@color/purple_100</item>
         <item name="colorOnPrimary">@color/black</item>
+
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorSecondarySurface">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
+
+        <item name="colorError">@color/orange_200</item>
+        <item name="colorErrorSurface">@color/orange_200</item>
+        <item name="colorOnError">@color/black</item>
     </style>
 </resources>

@@ -2,6 +2,7 @@
 <resources>
 
     <style name="Widget.Keyboard" parent="android:Widget">
+        <item name="rippleColor">?colorOnSurface</item>
         <item name="shapeAppearance">?shapeAppearanceMediumComponent</item>
         <item name="shapeAppearanceOverlay">?shapeAppearanceOverlay</item>
     </style>

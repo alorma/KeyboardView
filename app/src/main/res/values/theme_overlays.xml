@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="ThemeOverlay.Demo.Overlay.Primary" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorSurface">?colorPrimarySurface</item>
+        <item name="colorOnSurface">?colorOnPrimary</item>
+    </style>
+
     <style name="ThemeOverlay.Demo.Overlay.Secondary" parent="ThemeOverlay.MaterialComponents">
-        <item name="elevationOverlayColor">?colorSecondary</item>
+        <item name="colorSurface">?colorSecondarySurface</item>
+        <item name="colorOnSurface">?colorOnSecondary</item>
     </style>
 
     <style name="ThemeOverlay.Demo.Overlay.Error" parent="ThemeOverlay.MaterialComponents">
-        <item name="elevationOverlayColor">?colorError</item>
+        <item name="colorSurface">?colorErrorSurface</item>
+        <item name="colorOnSurface">?colorOnError</item>
     </style>
+
 </resources>
