@@ -3,22 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity"
     tools:ignore="HardcodedText">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.appbar.AppBarLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="8dp"
         android:text="Default style" />
 
     <com.alorma.keyboard.KeyboardView
         android:id="@+id/keyboardDefault"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
 
     <Space
         android:layout_width="match_parent"
@@ -27,32 +38,37 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
         android:text="Custom style" />
 
     <com.alorma.keyboard.KeyboardView
-        style="@style/Widget.Demo.Keyboard.Primary"
         android:id="@+id/keyboardPrimary"
+        style="@style/Widget.Demo.Keyboard.Primary"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="8dp" />
+        android:layout_height="16dp" />
 
     <com.alorma.keyboard.KeyboardView
         android:id="@+id/keyboardSecondary"
         style="@style/Widget.Demo.Keyboard.Secondary"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="8dp" />
+        android:layout_height="16dp" />
 
     <com.alorma.keyboard.KeyboardView
-        android:id="@+id/keyoard2Elevation16"
+        android:id="@+id/keyboardError"
         style="@style/Widget.Demo.Keyboard.Error"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/action_add_elevation"
+        android:icon="@drawable/ic_add"
+        android:title="Add elevation"
+        app:iconTint="?titleTextColor"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_remove_elevation"
+        android:icon="@drawable/ic_remove"
+        android:title="Remove elevation"
+        app:iconTint="?titleTextColor"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_reset_elevation"
+        android:icon="@drawable/ic_reset"
+        android:title="Reset elevation"
+        app:iconTint="?titleTextColor"
+        app:showAsAction="ifRoom" />
+
+</menu>

@@ -12,6 +12,7 @@
         <item name="cornerFamilyBottomLeft">cut</item>
         <item name="cornerFamilyBottomRight">rounded</item>
         <item name="cornerSize">12dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
     </style>
 
 </resources>

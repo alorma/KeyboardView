@@ -3,17 +3,17 @@
 
     <style name="Widget.Demo.Keyboard.Primary" parent="Widget.Keyboard">
         <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Overlay.Primary</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Primary</item>
     </style>
 
     <style name="Widget.Demo.Keyboard.Secondary" parent="Widget.Keyboard">
         <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Overlay.Secondary</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Secondary</item>
     </style>
 
     <style name="Widget.Demo.Keyboard.Error" parent="Widget.Keyboard">
         <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Overlay.Error</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Demo.Error</item>
     </style>
 
 </resources>

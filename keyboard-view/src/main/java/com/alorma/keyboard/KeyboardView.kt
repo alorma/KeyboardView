@@ -27,13 +27,10 @@ class KeyboardView @JvmOverloads constructor(
     defStyleAttr,
 ) {
 
-    var rippleColor: Int = MaterialColors.getColor(this, R.attr.colorOnSurface)
+    private var rippleColor: Int = MaterialColors.getColor(this, R.attr.colorOnSurface)
         set(value) {
-            field = getMergedColor(
-                overlayColor = value,
-                overlayAlpha = 0.3f
-            )
-            numbersAdapter.rippleColor = field
+            field = value
+            numbersAdapter.rippleColor = value
             numbersAdapter.notifyDataSetChanged()
         }
 
@@ -42,27 +39,22 @@ class KeyboardView @JvmOverloads constructor(
         rippleColor = rippleColor
     )
 
-    var shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
+    private var shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
         context,
         attributeSet,
         defStyleAttr,
         defStyleRes
     ).build()
-        set(value) {
-            field = value
-            initBackground()
-        }
 
     init {
+        readColors(attributeSet, defStyleAttr, defStyleRes)
         initBackground()
-
-        readRippleColor(attributeSet, defStyleAttr, defStyleRes)
 
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
         adapter = numbersAdapter
     }
 
-    private fun readRippleColor(
+    private fun readColors(
         attributeSet: AttributeSet?,
         defStyleAttr: Int,
         defStyleRes: Int
@@ -73,7 +65,15 @@ class KeyboardView @JvmOverloads constructor(
             defStyleAttr,
             defStyleRes
         ) {
-            rippleColor = getColor(R.styleable.KeyboardView_rippleColor, rippleColor)
+
+            rippleColor = getMergedColor(
+                backgroundColor = MaterialColors.getColor(
+                    this@KeyboardView,
+                    R.attr.colorSurface
+                ),
+                overlayColor = MaterialColors.getColor(this@KeyboardView, R.attr.colorSurface),
+                overlayAlpha = 0.6f
+            )
         }
     }
 
