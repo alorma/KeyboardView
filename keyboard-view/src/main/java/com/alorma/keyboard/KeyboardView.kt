@@ -51,7 +51,12 @@ class KeyboardView @JvmOverloads constructor(
             } catch (t: Throwable) {
                 null
             }
-            overlayAlpha = getFloat(R.styleable.KeyboardView_overlayAlpha, overlayAlpha)
+            val overlayAlpha = getFloat(R.styleable.KeyboardView_overlayAlpha, overlayAlpha)
+            when {
+                overlayAlpha < 0f -> this@KeyboardView.overlayAlpha = 0f
+                overlayAlpha > 1f -> this@KeyboardView.overlayAlpha = 1f
+                else -> this@KeyboardView.overlayAlpha = overlayAlpha
+            }
         }
     }
 
