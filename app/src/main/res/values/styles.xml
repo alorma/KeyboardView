@@ -5,6 +5,7 @@
 
     <style name="Widget.Demo.Keyboard.Secondary" parent="Widget.Keyboard">
         <item name="overlayColor">?colorSecondary</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Demo.Keyboard</item>
     </style>
 
 </resources>

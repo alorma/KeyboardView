@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.MaterialShapeUtils
+import com.google.android.material.shape.ShapeAppearanceModel
 
 class KeyboardView @JvmOverloads constructor(
     context: Context,
@@ -26,8 +27,9 @@ class KeyboardView @JvmOverloads constructor(
     private var overlayAlpha: Float = 0.08f
 
     init {
+
         initAttributes(context, attributeSet, defStyleAttr, defStyleRes)
-        initBackground(context)
+        initBackground(context, attributeSet, defStyleAttr, defStyleRes)
 
         val numbersAdapter = KeyboardNumbersAdapter()
         layoutManager = GridLayoutManager(context, numbersAdapter.itemCount / 2)
@@ -60,31 +62,41 @@ class KeyboardView @JvmOverloads constructor(
         }
     }
 
-    private fun initBackground(context: Context) {
+    private fun initBackground(
+        context: Context,
+        attributeSet: AttributeSet?,
+        defStyleAttr: Int,
+        defStyleRes: Int
+    ) {
         if (background == null || background is ColorDrawable) {
 
-            val finalOverlayColor = overlayColor
-            val backgroundColor = when {
-                background != null -> {
-                    (background as ColorDrawable).color
-                }
-                finalOverlayColor != null -> {
-                    getMergedColor(
-                        overlayColor = finalOverlayColor,
-                        overlayAlpha = overlayAlpha
-                    )
-                }
-                else -> {
-                    MaterialColors.getColor(this, R.attr.colorSurface)
-                }
-            }
+            val backgroundColor = obtainBackgroundColor()
 
-            val materialDrawable = MaterialShapeDrawable()
+            val shape = ShapeAppearanceModel.builder(
+                context,
+                attributeSet,
+                defStyleAttr,
+                defStyleRes
+            ).build()
+
+            val materialDrawable = MaterialShapeDrawable(shape)
 
             materialDrawable.initializeElevationOverlay(context)
             materialDrawable.elevation = ViewCompat.getElevation(this)
             materialDrawable.fillColor = ColorStateList.valueOf(backgroundColor)
             background = materialDrawable
+        }
+    }
+
+    private fun obtainBackgroundColor(): Int {
+        val finalOverlayColor = overlayColor
+        return when {
+            background != null -> (background as ColorDrawable).color
+            finalOverlayColor != null -> getMergedColor(
+                overlayColor = finalOverlayColor,
+                overlayAlpha = overlayAlpha
+            )
+            else -> MaterialColors.getColor(this, R.attr.colorSurface)
         }
     }
 

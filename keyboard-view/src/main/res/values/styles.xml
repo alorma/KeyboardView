@@ -4,6 +4,8 @@
     <style name="Widget.Keyboard" parent="android:Widget">
         <item name="overlayColor">?colorSurface</item>
         <item name="overlayAlpha">0.08</item>
+        <item name="shapeAppearance">?shapeAppearanceMediumComponent</item>
+        <item name="shapeAppearanceOverlay">?shapeAppearanceOverlay</item>
     </style>
 
 </resources>

@@ -4,6 +4,9 @@
     <declare-styleable name="KeyboardView">
         <attr name="overlayColor" format="color" />
         <attr name="overlayAlpha" format="float" />
+
+        <attr name="shapeAppearance" format="reference" />
+        <attr name="shapeAppearanceOverlay" format="reference" />
     </declare-styleable>
 
     <attr name="keyboardViewStyle" format="reference" />
